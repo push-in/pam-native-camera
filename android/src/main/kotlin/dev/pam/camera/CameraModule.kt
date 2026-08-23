@@ -71,7 +71,7 @@ class CameraModule(private val context: Context) : NativeModule {
                     )
                 }
                 completion.success(mapOf("json" to WireValue.Text(rows.toString())))
-            }.onFailure(completion::failure)
+            }.onFailure { error -> completion.failure(error) }
         }, ContextCompat.getMainExecutor(context))
     }
 
