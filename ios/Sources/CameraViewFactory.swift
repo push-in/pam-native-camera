@@ -443,19 +443,21 @@ private final class CameraPreview: UIView, AVCapturePhotoCaptureDelegate,
         }
     }
 
-    private func metadataTypes() -> [AVMetadataObject.ObjectType] = codeTypes.compactMap {
-        switch $0 {
-        case 1: return .qr
-        case 2: return .ean13
-        case 3: return .ean8
-        case 4: return .code128
-        case 5: return .code39
-        case 6: return .ean13
-        case 7: return .upce
-        case 8: return .pdf417
-        case 9: return .aztec
-        case 10: return .dataMatrix
-        default: return nil
+    private func metadataTypes() -> [AVMetadataObject.ObjectType] {
+        codeTypes.compactMap {
+            switch $0 {
+            case 1: return .qr
+            case 2: return .ean13
+            case 3: return .ean8
+            case 4: return .code128
+            case 5: return .code39
+            case 6: return .ean13
+            case 7: return .upce
+            case 8: return .pdf417
+            case 9: return .aztec
+            case 10: return .dataMatrix
+            default: return nil
+            }
         }
     }
 
