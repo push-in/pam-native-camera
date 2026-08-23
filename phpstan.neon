@@ -1,0 +1,6 @@
+parameters:
+    level: 9
+    paths:
+        - src
+    tmpDir: /tmp/pam-native-camera-phpstan
+    reportUnmatchedIgnoredErrors: true

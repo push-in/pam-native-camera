@@ -1,0 +1,20 @@
+{
+    "$schema": "vendor/pushinbr/pam-native-plugin-kit/resources/pam-native.idl.schema.json",
+    "version": 1,
+    "namespace": "Pam.Camera",
+    "enums": {
+        "CameraFacing": {"Back": 1, "Front": 2, "External": 3},
+        "CameraPermission": {"NotDetermined": 1, "Denied": 2, "Authorized": 3, "Restricted": 4},
+        "CameraMode": {"Photo": 1, "Video": 2, "PhotoAndVideo": 3},
+        "TorchMode": {"Off": 1, "On": 2, "Auto": 3},
+        "StabilizationMode": {"Off": 1, "Standard": 2, "Cinematic": 3, "Auto": 4},
+        "CameraEventKind": {"Initialized": 1, "Started": 2, "Stopped": 3, "PhotoCaptured": 4, "RecordingStarted": 5, "RecordingFinished": 6, "CodeScanned": 7, "FrameProcessorResult": 8, "InterruptionStarted": 9, "InterruptionEnded": 10, "RuntimeError": 11},
+        "CameraErrorCode": {"PermissionDenied": 1, "DeviceUnavailable": 2, "FormatUnsupported": 3, "ConfigurationFailed": 4, "CaptureFailed": 5, "RecordingFailed": 6, "ProcessorFailed": 7, "InvalidConfiguration": 8, "Interrupted": 9, "Unknown": 10},
+        "CodeType": {"Qr": 1, "Ean13": 2, "Ean8": 3, "Code128": 4, "Code39": 5, "UpcA": 6, "UpcE": 7, "Pdf417": 8, "Aztec": 9, "DataMatrix": 10}
+    },
+    "records": {
+        "CameraFormat": {"identifier": "string", "width": "int", "height": "int", "minimumFps": "int", "maximumFps": "int", "hdr": "bool", "photoHdr": "bool", "maximumZoom": "int"},
+        "CameraCapture": {"path": "string", "mimeType": "string", "width": "int", "height": "int", "durationMillis": "int", "orientationDegrees": "int", "mirrored": "bool"},
+        "ScannedCode": {"type": "CodeType", "value": "string", "x": "float", "y": "float", "width": "float", "height": "float"}
+    }
+}

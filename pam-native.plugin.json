@@ -1,0 +1,65 @@
+{
+    "$schema": "vendor/pushinbr/pam-native/resources/pam-native.plugin.schema.json",
+    "version": 1,
+    "protocol": 1,
+    "pamNative": {
+        "minimum": "0.8.0",
+        "maximumExclusive": "0.9.0"
+    },
+    "php": {
+        "provider": "Pam\\Native\\Camera\\CameraPluginProvider"
+    },
+    "android": {
+        "namespace": "dev.pam.camera",
+        "minSdk": 26,
+        "permissions": [
+            "android.permission.CAMERA",
+            "android.permission.RECORD_AUDIO"
+        ],
+        "dependencies": [
+            "androidx.camera:camera-camera2:1.6.1",
+            "androidx.camera:camera-core:1.6.1",
+            "androidx.camera:camera-lifecycle:1.6.1",
+            "androidx.camera:camera-mlkit-vision:1.6.1",
+            "androidx.camera:camera-video:1.6.1",
+            "androidx.camera:camera-view:1.6.1",
+            "com.google.mlkit:barcode-scanning:17.3.0"
+        ],
+        "sourceDirs": [
+            "android/src/main/kotlin"
+        ]
+    },
+    "ios": {
+        "minimumVersion": "15.0",
+        "sourceDirs": [
+            "ios/Sources"
+        ],
+        "frameworks": [
+            "AVFoundation",
+            "CoreImage",
+            "CoreMedia",
+            "CoreVideo",
+            "Metal",
+            "Vision"
+        ],
+        "usageDescriptions": {
+            "NSCameraUsageDescription": "Capture photos and videos.",
+            "NSMicrophoneUsageDescription": "Record audio with videos."
+        }
+    },
+    "idl": "pam-native.idl.json",
+    "modules": [
+        {
+            "name": "camera",
+            "class": "dev.pam.camera.CameraModule",
+            "iosClass": "CameraModule"
+        }
+    ],
+    "views": [
+        {
+            "name": "camera.preview",
+            "class": "dev.pam.camera.CameraViewFactory",
+            "iosClass": "CameraViewFactory"
+        }
+    ]
+}
