@@ -1,21 +1,56 @@
+<!-- pam:product-page:start -->
+<div align="center">
+
 # PAM Native Camera
 
-Professional zero-copy camera capture and native frame processors for PAM Native.
+**A professional camera pipeline with no JavaScript bridge in the frame path.**
 
-## Start here
+Capture photos and video, scan codes, and run bounded native frame processors while textures remain on the GPU.
 
-Install the PAM Runtime, create a native application, and add only the camera capability:
+[![Latest version](https://img.shields.io/packagist/v/pushinbr/pam-native-camera?style=flat-square&label=stable)](https://packagist.org/packages/pushinbr/pam-native-camera)
+[![CI](https://img.shields.io/github/actions/workflow/status/push-in/pam-native-camera/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/push-in/pam-native-camera/actions)
+![PHP](https://img.shields.io/badge/PHP-8.5-777BB4?style=flat-square&logo=php&logoColor=white)
+![Android](https://img.shields.io/badge/Android-API%2026%2B-3DDC84?style=flat-square&logo=android&logoColor=white)
+![iOS](https://img.shields.io/badge/iOS-15%2B-000000?style=flat-square&logo=apple&logoColor=white)
+
+**[Documentation](https://push-in.github.io/pam-docs/native/overview/) · [Quick start](#quick-start) · [What you can build](#what-you-can-build) · [PAM ecosystem](https://push-in.github.io/pam-docs/ecosystem/) · [Issues](https://github.com/push-in/pam-native-camera/issues)**
+
+</div>
+
+---
+
+## Why PAM Native Camera
+
+Capture photos and video, scan codes, and run bounded native frame processors while textures remain on the GPU. The public API is strictly typed for PHP 8.5; expensive or frame-sensitive work stays in Rust or the platform SDK instead of crossing the application boundary every frame.
+
+| | |
+| --- | --- |
+| **Best for** | A focused capability you can add to any PAM Native application |
+| **Native path** | CameraX · AVFoundation |
+| **Application model** | Composer package + generated native integration |
+| **Design rule** | Independent module; no feed, vertical, or application template bundled |
+
+## What you can build
+
+- Social capture and creator tools
+- Document, QR, and barcode scanning
+- On-device vision and custom native frame processors
+
+## Quick start
+
+Already have a PAM Native project? Add only this capability:
 
 ```bash
-curl --proto '=https' --proto-redir '=https' --tlsv1.2 \
-    --connect-timeout 15 --max-time 60 --max-filesize 1048576 -fsSL \
-    https://github.com/push-in/pam/releases/latest/download/install.sh | sh
-
-pam init my-app --template native
-cd my-app
 pam composer require pushinbr/pam-native-camera
 pam doctor --fix
 ```
+
+New to PAM? Follow the **[five-minute PAM Native setup](https://push-in.github.io/pam-docs/native/overview/)** once, then return here. Your application stays a normal Composer project with a committed lockfile.
+<!-- pam:product-page:end -->
+
+Professional zero-copy camera capture and native frame processors for PAM Native.
+
+## See it in action
 
 There is no social, feed, or streaming framework hidden in this package. Camera is an independent capability and can be used in any PAM Native application.
 
