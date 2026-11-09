@@ -12,7 +12,7 @@ Capture photos and video, scan codes, and run bounded native frame processors wh
 [![Latest release](https://img.shields.io/github/v/release/push-in/pam-native-camera?label=release&color=e3a008)](https://github.com/push-in/pam-native-camera/releases/latest)
 ![PHP 8.5](https://img.shields.io/badge/php-8.5-777bb4)
 [![CI](https://img.shields.io/github/actions/workflow/status/push-in/pam-native-camera/ci.yml?branch=main&label=ci)](https://github.com/push-in/pam-native-camera/actions/workflows/ci.yml)
-[![License](https://img.shields.io/badge/license-Apache--2.0-1f6feb)](LICENSE)
+[![License](https://img.shields.io/github/license/push-in/pam-native-camera?color=1f6feb)](LICENSE)
 
 [Install](#install) · [Quick example](#quick-example) · [Platforms](#platform-support) · [Permissions](#requirements) · [Docs](#docs) · [Issues](https://github.com/push-in/pam-native-camera/issues)
 
